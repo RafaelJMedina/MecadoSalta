@@ -1,8 +1,11 @@
 {
   "name": "ecommerce-backend",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +19,7 @@
     "express": "^5.2.1",
     "express-handlebars": "^8.0.6",
     "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.0",
     "mongoose": "^9.2.4",
     "nodemailer": "^8.0.1",
     "passport": "^0.7.0",
