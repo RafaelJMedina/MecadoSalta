@@ -2,6 +2,7 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import userRouter from './routes/user.router.js';
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,8 @@ app.use(cookieParser());
 app.engine('handlebars', handlebars.engine());
 app.set('views', 'src/views');
 app.set('view engine', 'handlebars');
+
+app.use('/api/users', userRouter);
 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
