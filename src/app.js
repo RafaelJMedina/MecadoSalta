@@ -3,6 +3,7 @@ import handlebars from 'express-handlebars';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import userRouter from './routes/user.router.js';
+import productRouter from './routes/product.router.js';
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ app.set('views', 'src/views');
 app.set('view engine', 'handlebars');
 
 app.use('/api/users', userRouter);
+app.use('/api/products', productRouter);
 
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
